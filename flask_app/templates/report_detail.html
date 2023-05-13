@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='/css/rep-detail.css') }}" >
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="inside_header">
+            <div id="title_img">
+                <img src="/static/img/HP_White_RGB_150_MD.png" alt="HP-logo">
+                <h1 value="{{user}}">Report Details</h1>
+            </div>
+            <div id="header_links">
+            {% for report in reportings %}
+                {% if report.creator.first_name == user.first_name %}
+                <a href="/edit_report/{{report.id}}"><button id="plus">Edit</button></a>
+                {% else %}
+                {% endif %}
+                <a href="/"><button id="logout">Logout</button></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div id="detail_box"> 
+            <div id="report_title">
+                <div id="title_container">
+                    <img src="/static/img/HP_White_RGB_150_MD.png" alt="HP-logo">
+                    <h2 id="title">E.O.S Report</h2>
+                </div>
+            </div>
+            <div id="top_section">
+                <div id="date">
+                    <p id="date_title">Date:</p>
+                    <p id="date_box">{{report.date_reported}}</p>
+                </div>
+            </div>
+            <div id="mid-section">
+                <div class="info">
+                    <p class="info-p1">case number:</p>
+                    <p class="info-p2">{{report.case_number}}</p>
+                </div>
+                <div class="info">
+                    <p class="info-p1"  id="info-p0">FSE:</p>
+                    <p class="info-p2"  id="info-p0">{{report.fse_name}}</p>
+                </div>
+                <div class="info">
+                    <p class="info-p1" id="info-p0">Customer:</p>
+                    <p class="info-p2" id="info-p0">{{report.customer_name}}</p>
+                </div>
+                <div class="info">
+                    <p class="info-p1">L1 Name:</p>
+                    <p class="info-p2">{{report.l1_name}}</p>
+                </div>
+                <div class="info">
+                    <p class="info-p1" id="info-p0">machine Type:</p>
+                    <p class="info-p2" id="info-p0">{{report.machine_type}}</p>
+                </div>
+                <div class="info">
+                    <p class="info-p1" id="info-p0">L3 Name:</p>
+                    <p class="info-p2" id="info-p0">{{report.l3_name}}</p>
+                </div>
+            </div>
+
+            <div id="bottom-section">
+                <div id="sn_info">
+                    <p id="serial-title">Serial Number's:</p>
+                    <p id="serial-box">{{report.serial_number}}</p>
+                </div>
+                <div id="desc_info">
+                    <p id="report-title">Reportings:</p>
+                    <p id="report-box">{{report.description}}</p>
+                </div>
+                <div id="delete-bbox">
+                    <a href="/delete/{{report.id}}"><button id="delete-button" >Delete report</button></a>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </section>
+</body>
+</html>

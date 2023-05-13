@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='/css/cust.css') }}" >
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="inside_header">
+            <div id="title_img">
+                <img src="/static/img/HP_White_RGB_150_MD.png" alt="HP-logo">
+                <h1 value="{{user}}">Welcome {{ user.first_name }}</h1>
+            </div>
+            <div id="header_links">
+                <a href="/add_customer"><button id="plus">+ Customer</button></a>
+                <a href="/logout"><button id="logout">Logout</button></a>
+            </div>
+        </div>
+    </header>
+    <div id="searchbox">
+        <form id="search-form">
+            <label id="search-label">Search:</label>
+            <input type="search" name="" id="search-report" placeholder="Search Reports" >
+        </form>
+    </div>
+    <section>
+        <div id="cust_box">
+            <li><a id="customer_button" href="/all_reports">All</a></li>
+        </div>
+        {% for customer in all_customers %}
+        <div id="cust_box">
+            <li><a id="customer_button" href="/cust_page/{{customer.customer_name}}">{{ customer.customer_name }}</a></li>
+        </div>
+        {% endfor %}
+</section>
+
+</body>
+</html>

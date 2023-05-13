@@ -1,0 +1,123 @@
+/* header */
+body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background: rgb(30, 30, 30);
+    height: 65px;
+}
+
+#header_details {
+    display: flex;
+    width: 85%;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-left: 20px;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 30px 10px 10px;
+}
+
+#reg_log_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+li {
+    width: 160px;
+    height: 36px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #3ab4eb;
+    font-size: 16px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    white-space: normal;
+    padding: 7px 55px 7px 55px;
+    text-decoration: none;
+}
+
+#login_button a:visited {
+    color: rgb(30, 30, 30);
+}
+
+#join_button a:visited {
+    color: #3ab4eb;
+}
+
+#login_button {
+    background-color: #3ab4eb;
+    color:rgb(30, 30, 30);
+}
+
+#join_button {
+    background-color: rgb(30, 30, 30);
+    color: #3ab4eb;
+}
+
+#join_button:hover {
+    background-color:rgba(41, 41, 41, 0.796);
+    color: #47c2fa;
+}
+
+#login_button:hover {
+    background-color: #47c2fa;
+    color:rgba(54, 54, 54, 0.796)
+}
+
+/* Index Section */
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#stock-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#printer_open_img {
+    width: 55%;
+    object-fit: cover;
+}
+
+#engineer_img {
+    width: 45%;
+    object-fit: cover;
+}
+
+#polymer_img {
+    width: 65%;
+    object-fit: cover;
+}
+
+#hpq_img {
+    width: 35%;
+    object-fit: cover;
+}

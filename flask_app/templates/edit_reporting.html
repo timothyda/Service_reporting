@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='/css/add_edit.css') }}" >
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="inside_header">
+            <div id="title_img">
+                <img src="/static/img/HP_White_RGB_150_MD.png" alt="HP-logo">
+                <h1 value="{{user}}">Edit Report</h1>
+            </div>
+            <div id="header_links">
+                <a href="/dashboard"><button id="plus">Customers</button></a>
+                <a href="/"><button id="logout">Logout</button></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+            {% for report in reportings %}
+        <div id="detail_box">
+            <form action="/update/{{report.id}}" method="post">
+                <div>
+                    <div>
+                    {% with messges = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    </div>
+                </div>
+                <div id="report_title">
+                    <div id="title_container">
+                        <img src="/static/img/HP_White_RGB_150_MD.png" alt="HP-logo">
+                        <h2 id="title">E.O.S Report</h2>
+                    </div>
+                </div>
+                
+                <div id="top-section">
+                    <div id="date">
+                        <label id="date_title" for="date_reported">Date of Service:</label>
+                        <input id="date_select" type="date" name="date_reported">
+                    </div>
+                </div>
+                <div id="mid-section">
+                    <div class="info">
+                        <label class="info-p1" for="case_number">Case Number:</label>
+                        <input class="info-p2" type="textbox" name="case_number" >
+                    </div>
+                    <div class="info">
+                        <label class="info-p1" for="fse_name">Fse Name:</label>
+                        <input class="info-p2" type="texbox" name="fse_name">
+                    </div>
+                    <div class="info">
+                        <label class="info-p1" for="customer_name">Customer:</label>
+                        <select class="info-p2" name="customer_name" id="type_menu">
+                            {% for customer in all_customers %}
+                            <option value="{{customer.customer_name}}">{{customer.customer_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="info">
+                        <label class="info-p1" for="l1_name">L1 Name:</label>
+                        <input class="info-p2" type="textbox" name="l1_name">
+                    </div>
+                    <div class="info">
+                        <label class="info-p1" for="machine_type">Machine Type:</label>
+                        <select class="info-p2" name="machine_type" id="type_menu">
+                            <option value="AUS">AUS</option>
+                            <option value="Printer">Printer</option>
+                            <option value="Processing Station">Processing Station</option>
+                            <option value="Build Unit">Build Unit</option>
+                        </select>
+                    </div>
+                    <div class="info">
+                        <label class="info-p1" for="l3_name">L3 Name:</label>
+                        <input class="info-p2" type="textbox" name="l3_name">
+                    </div>
+                </div>
+                <div id="bottom-section">
+                    <div id="sn_info">
+                            <label id="serial-title" for="serial_number">serial Numbers:</label>
+                            <textarea id="serial-box" type="textarea" name="serial_number" placeholder="if more than one seperate by coma ','"></textarea>
+                    </div>
+                    <div id="desc_info">
+                            <label id="report-title" for="description">Description:</label>
+                            <textarea id="report-box" type="textarea" name="description"></textarea>
+                    </div>
+                </div>
+                <div id="edit-button-box">
+                    <input type="submit" value="Send Report" id="edit-button">
+                </div>
+            </form>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>
