@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="cust_form">
-        <form action="/register" method="post" id="reg-form">
+        <form action="/send_customer" method="post" id="reg-form">
             <div id="title">
                 <img src="/static/img/HP_Black_RGB_150_SM.png" alt="HP-logo">
                 <h2>Add Customer</h2>
@@ -26,29 +26,28 @@
             {% endwith %}
             <div id="form_input">
                 <div>
-                    <label for="first_name">Customer Name:</label>
+                    <label for="customer_name">Customer Name:</label>D
                     <input type="text" name="customer_name" required>
                 </div>
                 <div>
-                    <label for="last_name">Address:</label>
-                    <textarea id="address_input" type="text" name="Address"></textarea>
+                    <label for="address">Address:</label>
+                    <textarea id="address_input" type="text" name="address"></textarea>
                 </div>
                 <div>
-                    <label for="email">Contact Name:</label>
+                    <label for="contact_name">Contact Name:</label>
                     <input type="text" name="contact_name">
                 </div>
                 <div>
-                    <label for="password">Contact Email:</label>
-                    <input type="text" name="password">
+                    <label for="contact_email">Contact Email:</label>
+                    <input type="text" name="contact_email">
                 </div>
                 <div>
-                    <label for="confirm_password">Contact Phone:</label>
+                    <label for="contact_phone">Contact Phone:</label>
                     <input type="text" name="contact_phone">
                 </div>
             </div>
                 <div id="button">
-                    <label></label>
-                    <input type="submit" value="&nbsp Submit &nbsp" id="input_button">
+                    <input type="submit" value="Send Customer" id="input_button">
                 </div>
         </form>
     </div>

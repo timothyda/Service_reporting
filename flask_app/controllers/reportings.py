@@ -48,7 +48,7 @@ def create():
         return redirect('/register_page')
 
     if not User.validate_registration(request.form):
-        return redirect('register_page')
+        return redirect('/register_page')
 
     else :
         user_id = User.save(data)
@@ -124,8 +124,6 @@ def send_report():
         "date_reported" : request.form['date_reported'],
         "description" : request.form['description']
     }
-    print("----------1------")
-    print(data)
     Reporting.save(data)
     return redirect('/dashboard')
 
@@ -152,6 +150,7 @@ def send_customer():
         "contact_email" : request.form['contact_email'],
         "contact_phone" : request.form['contact_phone']
     }
+    print(data)
     Customer.save_customer(data)
     return redirect('/dashboard')
 

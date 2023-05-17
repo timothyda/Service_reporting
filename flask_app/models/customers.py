@@ -20,6 +20,7 @@ class Customer:
     def save_customer( cls,data ):
         query = """INSERT INTO customers (customer_name , address , contact_name , contact_email , contact_phone , created_at , updated_at)
         VALUES (%(customer_name)s, %(address)s, %(contact_name)s, %(contact_email)s, %(contact_phone)s, NOW(), NOW());"""
+        print(data)
         return connectToMySQL('HP_Reporting').query_db(query,data)
 
 
