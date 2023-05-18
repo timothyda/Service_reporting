@@ -106,16 +106,3 @@ class Reporting:
         query = "UPDATE reportings SET customer_name=%(customer_name)s, machine_type=%(machine_type)s, case_number=%(case_number)s, fse_name=%(fse_name)s, l1_name=%(l1_name)s, l3_name=%(l3_name)s, serial_number=%(serial_number)s, date_reported=%(date_reported)s, description=%(description)s, updated_at = NOW() WHERE id = %(id)s;"
         return connectToMySQL('HP_Reporting').query_db(query,data)
 
-
-
-
-"""
-    @classmethod
-    def get_all(cls):
-        query = "SELECT * FROM reportings;"
-        reportings_from_db =  connectToMySQL('HP_Reporting').query_db(query)
-        reporting =[]
-        for n in reportings_from_db:
-            reporting.append(cls(n))
-        return reporting
-"""

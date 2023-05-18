@@ -150,7 +150,6 @@ def send_customer():
         "contact_email" : request.form['contact_email'],
         "contact_phone" : request.form['contact_phone']
     }
-    print(data)
     Customer.save_customer(data)
     return redirect('/dashboard')
 
@@ -200,8 +199,7 @@ def report_details(report_id):
 def delete(report_id):
     data = {
         "id" : report_id
-    }
-    
+    } 
     Reporting.destroy(data)
     return redirect('/dashboard')
 
