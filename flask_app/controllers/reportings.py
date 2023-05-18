@@ -232,7 +232,6 @@ def report_update(report_id ):
     "date_reported" : request.form['date_reported'],
     "description" : request.form['description']
     }
-    print(data)
     Reporting.update(data)
     return redirect('/dashboard')
 
