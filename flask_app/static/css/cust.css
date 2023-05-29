@@ -117,47 +117,80 @@ header button {
     border-radius: 10px;
 }
 
-/* customer boxes */
+/* boxes */
 section {
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
 }
 
-#cust_box {
+section button {
+    background-color: #a5d3e7;
+    width: 250px;
+    height: 300px;
+    font-size: 30px;
+    color: black;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+a {
+    text-decoration: none;
+}
+
+section button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    background-image: url("/static/img/HP_printing_desktop.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    border: 1px solid black;
-    width: 180px;
-    height: 250px;
+    width: 320px;
+    height: 400px;
+    font-size: 35px;
+    color: black;
+    z-index: 1;
+    position: relative;
+    margin: -20px;
+    box-shadow: 0px 0px 8px 5px rgba(77, 75, 75, 0.452);
 }
 
-#cust_box:hover {
-    width: 280px;
-    height: 350px;
-    background-color:rgb(88, 119, 158) ;
-}
-
-section li {
+/* report box */
+#report_button {
     display: flex;
-    justify-content: center;
-    text-align: center;
-    list-style-type: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-section a , section a:visited , section a:hover {
-    text-decoration: none;
-    color: rgb(246, 246, 247);
-    font-weight: 600;
-    font-size: 30px;
-    padding: 97px 55px;
+#boxtitle {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 28px;
+    border-bottom: 1px solid rgba(63, 61, 61, 0.603);
 }
 
-section a:visited {
-    color: rgb(255, 255, 255);
+#descriptionbox {
+    display: flex;
+    justify-content: start;
+    margin: 10px;
+    align-items: start;
 }
+
+#boxdescription {
+    text-align: left;
+    width: 100%;
+    text-overflow: clip;
+    white-space: no-wrap;
+    overflow: hidden;
+    margin: 5px;
+    height: 170px;
+    font-size: 18px;
+}
+
+#boxname {
+    width: 100%;
+    padding: 5px;
+    border-top: 1px solid rgba(63, 61, 61, 0.603);
+    font-size: 25px;
+}
+

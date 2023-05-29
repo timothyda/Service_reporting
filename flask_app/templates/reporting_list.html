@@ -29,9 +29,22 @@
     </div>
     <section>
         {% for report in all_customer_reports %}
-        <div id="cust_box">
-            <li><a id="customer_button" href="/report_details/{{report.id}}">{{ report.machine_type }}</a></li>
-        </div>
+        <a id="reportbutton" href="/report_details/{{report.id}}">
+            <button id="report_button">
+                <div id="boxtitle">
+                    {{ report.machine_type }}
+                </div>
+                <div id="descriptionbox">
+                    <div id="boxdescription">
+                        {{ report.description }}
+                    </div>
+                </div>
+                
+                <div id="boxname">
+                    {{ report.customer_name }}
+                </div>
+            </button>
+        </a>
         {% endfor %}
 </section>
 
