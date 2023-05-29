@@ -148,7 +148,8 @@ def send_customer():
         "address" : request.form['address'],
         "contact_name" : request.form['contact_name'],
         "contact_email" : request.form['contact_email'],
-        "contact_phone" : request.form['contact_phone']
+        "contact_phone" : request.form['contact_phone'],
+        "customer_img" : request.form['customer_img']
     }
     Customer.save_customer(data)
     return redirect('/dashboard')

@@ -15,6 +15,7 @@
                 <h1 value="{{user}}">Welcome {{ user.first_name }}</h1>
             </div>
             <div id="header_links">
+                <a href="/add_report"><button id="plus">+ Report</button></a>
                 <a href="/add_customer"><button id="plus">+ Customer</button></a>
                 <a href="/logout"><button id="logout">Logout</button></a>
             </div>
@@ -33,9 +34,9 @@
             </a>
         </div>
         {% for customer in all_customers %}
-        <div id="cust_box">
+        <div id="cust_box" >
             <a id="customerbutton" href="/cust_page/{{customer.customer_name}}">
-                <button id="customer_button">{{ customer.customer_name }}</button>
+                <button style="background-image: url('/static/img/{{customer.customer_img}}');" id="customer_button"></button>
             </a>
         </div>
         {% endfor %}
@@ -45,4 +46,4 @@
 </html>
 
 
-
+"

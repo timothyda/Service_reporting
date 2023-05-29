@@ -10,6 +10,7 @@ class Customer:
         self.contact_name = db_data['contact_name']
         self.contact_email = db_data['contact_email']
         self.contact_phone = db_data['contact_phone']
+        self.customer_img = db_data['customer_img']
         self.created_at = db_data['created_at']
         self.updated_at = db_data['updated_at']
         self.reporter = None
@@ -18,8 +19,8 @@ class Customer:
 
     @classmethod
     def save_customer( cls,data ):
-        query = """INSERT INTO customers (customer_name , address , contact_name , contact_email , contact_phone , created_at , updated_at)
-        VALUES (%(customer_name)s, %(address)s, %(contact_name)s, %(contact_email)s, %(contact_phone)s, NOW(), NOW());"""
+        query = """INSERT INTO customers (customer_name , address , contact_name , contact_email , contact_phone , customer_img , created_at , updated_at)
+        VALUES (%(customer_name)s, %(address)s, %(contact_name)s, %(contact_email)s, %(contact_phone)s, %(customer_img)s, NOW(), NOW());"""
         return connectToMySQL('HP_Reporting').query_db(query,data)
 
 

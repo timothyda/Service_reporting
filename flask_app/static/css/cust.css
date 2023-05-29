@@ -125,7 +125,9 @@ section {
 }
 
 section button {
-    background-color: #a5d3e7;
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
     width: 250px;
     height: 300px;
     font-size: 30px;
